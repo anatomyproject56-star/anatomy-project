@@ -1,0 +1,201 @@
+/* ===== GLOBAL ===== */
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:linear-gradient(135deg,#062A4F,#0E4A82,#1676C9);
+  color:white;
+  padding-top:80px;   /* space for fixed top bar */
+}
+img{max-width:100%;display:block}
+
+/* ===== DISABLE OLD GOOGLE-SITES HEADER ===== */
+.site-header{display:none;}
+.site-title{display:none;}
+.site-tagline{display:none;}
+
+/* ===== HOME PAGE GRID ===== */
+.species-grid{
+  max-width:1200px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+  padding:0 20px;
+}
+
+.species-card{
+  height:360px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:18px;
+  box-shadow:0 18px 40px rgba(0,0,0,.35);
+  display:flex;
+  flex-direction:column;
+  padding:12px;
+  transition:.3s;
+  text-decoration:none;
+  color:white;
+}
+.species-card:hover{transform:translateY(-8px);background:rgba(255,255,255,.22)}
+.species-card h3{
+  text-align:center;
+  margin:6px 0 10px;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+
+.img-box{flex:1;border-radius:14px;overflow:hidden;}
+.img-box img{width:100%;height:100%;object-fit:cover;transition:.3s;}
+.img-box img:hover{transform:scale(1.05)}
+
+/* ===== FOOTER ===== */
+.footer-note{text-align:center;opacity:.8;margin:20px}
+
+/* ===== SIDE MENU ===== */
+.side-menu{
+  position:fixed;top:0;left:-300px;
+  width:280px;height:100%;
+  background:white;color:#06233f;
+  padding:20px;
+  box-shadow:10px 0 25px rgba(0,0,0,.4);
+  transition:.4s;
+  z-index:1100;
+}
+.side-menu.open{left:0}
+
+.close-menu{
+  position:absolute;top:10px;right:10px;
+  background:#083a66;color:white;border:none;
+  padding:5px 10px;border-radius:8px;
+}
+
+.menu-title{margin-top:40px;font-weight:900}
+
+.menu-head,.submenu-head,.submenu-head2{
+  width:100%;padding:10px;
+  background:#0b3c66;color:white;
+  border:none;border-radius:8px;
+  margin-top:10px;cursor:pointer;
+  text-align:left;
+}
+
+.menu-body,.submenu-body,.submenu-body2{display:none;padding-left:10px}
+.menu-body.open,.submenu-body.open,.submenu-body2.open{display:block}
+
+.menu-body a,.submenu-body2 a{
+  display:block;padding:8px;
+  color:#06233f;text-decoration:none;
+}
+
+.menu-home{
+  display:block;margin-top:20px;
+  padding:10px;border-radius:10px;
+  background:#083a66;color:white;
+  text-align:center;text-decoration:none;
+}
+
+/* ===== TWO PANEL PAGES ===== */
+.study-grid{
+  max-width:1200px;
+  margin:30px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:24px;
+  padding:0 20px;
+}
+
+.study-card{
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:20px;
+  padding:16px;
+  text-decoration:none;
+  color:white;
+  box-shadow:0 18px 40px rgba(0,0,0,.35);
+  transition:.3s;
+}
+.study-card:hover{transform:translateY(-8px);background:rgba(255,255,255,.22)}
+
+.image-frame{
+  width:320px;
+  height:300px;
+  border-radius:16px;
+  overflow:hidden;
+  margin-top:10px;
+}
+.image-frame img{width:100%;height:100%;object-fit:cover}
+
+/* ===== FORELIMB FOUR CARD GRID ===== */
+.forelimb-grid{
+  max-width:1200px;
+  margin:30px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+  padding:0 20px;
+}
+
+.forelimb-card{
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:20px;
+  padding:16px;
+  color:white;
+  text-decoration:none;
+  box-shadow:0 18px 40px rgba(0,0,0,.35);
+  transition:.3s;
+}
+.forelimb-card:hover{transform:translateY(-8px);background:rgba(255,255,255,.22)}
+
+.img-frame{
+  height:260px;
+  border-radius:16px;
+  overflow:hidden;
+  margin-top:10px;
+}
+.img-frame img{width:100%;height:100%;object-fit:cover}
+
+/* ===== MOBILE ===== */
+@media(max-width:600px){
+  .img-frame,.image-frame{height:200px}
+}
+
+/* ===== FIXED TOP BAR ===== */
+.top-bar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:70px;
+  background:linear-gradient(90deg,#022c54,#0b4f8a);
+  z-index:1200;
+  box-shadow:0 4px 10px rgba(0,0,0,.3);
+  display:grid;
+  grid-template-columns:70px 1fr 70px;
+  align-items:center;
+}
+
+.top-bar h1{
+  grid-column:2;
+  text-align:center;
+  color:white;
+  font-size:24px;
+  margin:0;
+  white-space:nowrap;
+}
+
+
+/* ===== HAMBURGER (ONLY ONE VERSION) ===== */
+.hamburger{
+  grid-column:1;
+  justify-self:start;
+  margin-left:14px;
+  width:42px;
+  height:42px;
+  font-size:24px;
+  border-radius:10px;
+  border:none;
+  background:white;
+  cursor:pointer;
+}

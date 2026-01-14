@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Muscles of Scapula</title>
+<link rel="stylesheet" href="../../../style.css">
+<script src="../../../app.js" defer></script>
+<style>
+/* ===== TOP PAGE TITLE BOX ===== */
+.page-title-box{
+  max-width:1300px;
+  margin:15px auto 20px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:18px;
+  padding:14px;
+  text-align:center;
+  font-size:26px;
+  font-weight:700;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.scapula-layout{
+  max-width:1300px;
+  margin:0 auto 30px;
+  display:grid;
+  grid-template-columns:1fr 300px;
+  gap:24px;
+  padding:0 15px;
+}
+
+/* ===== LEFT VIEWER ===== */
+.viewer{
+  display:grid;
+  grid-template-rows: minmax(240px, 45vh) minmax(240px, 45vh);
+  gap:16px;
+}
+
+/* ===== VIDEO ===== */
+.video-box{
+  background:rgba(255,255,255,.15);
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.3);
+  padding:10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.video-box video{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  border-radius:12px;
+  background:black;
+}
+
+/* ===== IMAGE + TEXT ===== */
+.info-box{
+  background:rgba(255,255,255,.15);
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.3);
+  padding:12px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  height:380px
+}
+
+.model-box{
+  background:rgba(0,0,0,0.15);
+  border-radius:12px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100%;
+  overflow:hidden;   /* prevents overflow */
+}
+
+.model-box img{
+  max-width:100%;
+  max-height:100%;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+}
+
+
+/* ===== TEXT ===== */
+.points{
+  font-size:15px;
+  line-height:1.5;
+}
+.points h3{margin-top:0}
+
+/* ===== BUTTON PANEL ===== */
+.muscle-menu{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.muscle-btn{
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  background:#0b4f8a;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 6px 16px rgba(0,0,0,.3);
+}
+.muscle-btn:hover{background:#1676c9}
+.muscle-btn.active{background:#1fa2ff}
+
+/* ===================== TABLET ===================== */
+@media(max-width:900px){
+  .scapula-layout{
+    grid-template-columns:1fr;
+  }
+
+  .muscle-menu{
+    flex-direction:row;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:10px;
+  }
+
+  .muscle-btn{
+    flex:1 1 140px;
+    text-align:center;
+  }
+}
+
+/* ===================== MOBILE ===================== */
+@media(max-width:600px){
+  .page-title-box{
+    font-size:22px;
+    padding:12px;
+  }
+
+  .viewer{
+    grid-template-rows: minmax(200px, 40vh) minmax(260px, auto);
+  }
+
+  .info-box{
+    grid-template-columns:1fr;
+  }
+
+  .points{
+    font-size:14px;
+  }
+
+  .muscle-btn{
+    font-size:14px;
+    padding:12px;
+  }
+}
+/* Prevent overlap with site footer band */
+.scapula-layout{
+  padding-bottom:120px;
+}
+
+</style>
+</head>
+
+<body class="landing-bg">
+
+<!-- GLOBAL MENU -->
+<div id="menu-container"></div>
+
+<!-- TITLE BOX -->
+<div class="page-title-box">Muscles of Scapula</div>
+
+<div class="scapula-layout">
+
+  <!-- LEFT VIEWER -->
+  <div class="viewer">
+
+    <div class="video-box">
+      <video id="muscleVideo" controls></video>
+    </div>
+
+    <div class="info-box">
+      <div class="model-box">
+        <img id="muscleModel" src="">
+      </div>
+      <div class="points" id="musclePoints">
+        <p style="opacity:.7">Select a muscle from the right panel to view its anatomy.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT MENU -->
+  <div class="muscle-menu">
+    <button class="muscle-btn" onclick="loadMuscle('deltoid',this)">Deltoideus</button>
+    <button class="muscle-btn" onclick="loadMuscle('rhomboid',this)">Rhomboideus</button>
+    <button class="muscle-btn" onclick="loadMuscle('coracobrachialis',this)">Coracobrachialis</button>
+  </div>
+
+</div>
+
+<script>
+const muscles = {
+  deltoid:{
+    video:"../../../videos/deltoid_layer.mp4",
+    image:"../../../images/deltoid_3d.png",
+    text:`
+      <h3>Deltoideus</h3>
+      <ul>
+        <li>Origin: Spine of scapula</li>
+        <li>Insertion: Deltoid tuberosity</li>
+        <li>Function: Flexion of shoulder joint</li>
+        <li>Major limb elevator</li>
+      </ul>`
+  },
+
+  rhomboid:{
+    video:"../../../videos/rhomboid_layer.mp4",
+    image:"../../../images/rhomboid_3d.png",
+    text:`
+      <h3>Rhomboideus</h3>
+      <ul>
+        <li>Origin: Cervical and thoracic vertebrae</li>
+        <li>Insertion: Medial border of scapula</li>
+        <li>Function: Elevates scapula</li>
+        <li>Supports forelimb suspension</li>
+      </ul>`
+  },
+
+  coracobrachialis:{
+    video:"../../../videos/coracobrachialis_layer.mp4",
+    image:"../../../images/coracobrachialis_3d.png",
+    text:`
+      <h3>Coracobrachialis</h3>
+      <ul>
+        <li>Origin: Coracoid process</li>
+        <li>Insertion: Humerus</li>
+        <li>Function: Adducts the limb</li>
+        <li>Maintains shoulder stability</li>
+      </ul>`
+  }
+};
+
+function loadMuscle(name,btn){
+  const m = muscles[name];
+  document.getElementById("muscleVideo").src = m.video;
+  document.getElementById("muscleModel").src = m.image;
+  document.getElementById("musclePoints").innerHTML = m.text;
+
+  document.querySelectorAll(".muscle-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+}
+</script>
+
+</body>
+</html>

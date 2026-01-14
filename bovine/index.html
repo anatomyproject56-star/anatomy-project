@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Bovine — Vetixo</title>
+
+<link rel="stylesheet" href="../style.css">
+<script src="../app.js" defer></script>
+
+<style>
+.bovine-wrapper{
+  max-width:900px;
+  margin:40px auto;
+  padding:10px 18px;
+  color:#fff;
+}
+
+.bovine-title{
+  text-align:center;
+  font-size:34px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.section-btn{
+  display:block;
+  width:100%;
+  padding:12px 16px;
+  font-size:16px;
+  font-weight:700;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.3);
+  background:rgba(255,255,255,.18);
+  color:#fff;
+  cursor:pointer;
+  box-shadow:0 18px 36px rgba(0,0,0,.35);
+}
+
+.section-btn:hover{
+  background:rgba(255,255,255,.22);
+}
+
+.dropdown-panel{
+  margin-top:14px;
+  display:none;
+}
+
+.study-card{
+  margin-top:14px;
+  padding:12px;
+  border-radius:14px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.28);
+  box-shadow:0 18px 40px rgba(0,0,0,.35);
+  color:#fff;
+  text-decoration:none;
+  display:block;
+}
+
+.study-card h3{
+  margin:0 0 6px;
+  font-weight:900;
+  text-align:center;
+}
+
+.study-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.study-card:hover{
+  background:rgba(255,255,255,.20);
+  transform:translateY(-4px);
+  transition:.25s;
+}
+</style>
+</head>
+
+<body class="landing-bg">
+
+<!-- ===== MAIN MENU LOADER (optional if you're using it globally) ===== -->
+<div id="menu-container"></div>
+
+
+<!-- ===== PAGE CONTENT ===== -->
+<div class="bovine-wrapper">
+
+  <h1 class="bovine-title">Bovine Anatomy</h1>
+
+  <button class="section-btn" onclick="toggleDropdown()">
+    Choose the section you want to study
+  </button>
+
+  <div id="dropdownBox" class="dropdown-panel">
+    <section class="study-grid">
+
+  <a class="study-card" href="#">
+    <h3>Osteology</h3>
+
+    <div class="image-frame">
+      <img src="../images/bovine_skeleton.jpg" alt="Bovine Skeleton">
+    </div>
+
+    <p>Skeletal Structure (Work in Progress)</p>
+  </a>
+
+  <a class="study-card" href="myology/index.html">
+    <h3>Myology</h3>
+
+    <div class="image-frame">
+      <img src="../images/bovine_muscular.jpg" alt="Bovine Muscular System">
+    </div>
+
+    <p>Muscular System — Forelimb & Hindlimb</p>
+  </a>
+
+</section>
+
+
+
+  </div>
+</div>
+
+<footer class="footer-note">
+  Academic Project | Veterinary Anatomy
+</footer>
+
+<script>
+function toggleDropdown(){
+  const box = document.getElementById("dropdownBox");
+  box.style.display = (box.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
