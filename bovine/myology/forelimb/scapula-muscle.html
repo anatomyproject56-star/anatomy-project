@@ -195,16 +195,38 @@
 
   <!-- RIGHT MENU -->
   <div class="muscle-menu">
-    <button class="muscle-btn" onclick="loadMuscle('deltoid',this)">Deltoideus</button>
-    <button class="muscle-btn" onclick="loadMuscle('rhomboid',this)">Rhomboideus</button>
+    <button class="muscle-btn" onclick="loadMuscle('supraspinatous',this)">Supraspinatous</button>
+    <button class="muscle-btn" onclick="loadMuscle('infraspinatous',this)">Infraspinatous</button>
+    <button class="muscle-btn" onclick="loadMuscle('deltoideus',this)">Deltoideus</button>
+    <button class="muscle-btn" onclick="loadMuscle('teresmajor',this)">Teres Major</button>
+    <button class="muscle-btn" onclick="loadMuscle('teresminor',this)">Teres Minor</button>
+    <button class="muscle-btn" onclick="loadMuscle('subscapularis',this)">Subscapularis</button>
+    <button class="muscle-btn" onclick="loadMuscle('bicepsbrachialis',this)">Biceps Brachialis</button>
     <button class="muscle-btn" onclick="loadMuscle('coracobrachialis',this)">Coracobrachialis</button>
+    <button class="muscle-btn" onclick="loadMuscle('omotransversarius',this)">Omotransversarius</button>
+    <button class="muscle-btn" onclick="loadMuscle('trapezius',this)">Trapezius</button>
+    <button class="muscle-btn" onclick="loadMuscle('rhomboideus',this)">Rhomboideus</button>
+    <button class="muscle-btn" onclick="loadMuscle('serratus',this)">Serratus Ventralis</button>
+    <button class="muscle-btn" onclick="loadMuscle('pectoralis',this)">Pectoralis Profundus</button>
   </div>
 
 </div>
 
 <script>
 const muscles = {
-  deltoid:{
+  supraspinatous:{
+    video:"../../../videos/supraspinatous_layer.mp4",
+    image:"../../../images/supraspinatous_3d.png",
+    text:`
+      <h3>Supraspinatous</h3>
+      <ul>
+        <li>Origin: Spine of scapula</li>
+        <li>Insertion: Deltoid tuberosity</li>
+        <li>Function: Flexion of shoulder joint</li>
+        <li>Major limb elevator</li>
+      </ul>`
+  },
+  infraspinatous:{
     video:"../../../videos/deltoid_layer.mp4",
     image:"../../../images/deltoid_3d.png",
     text:`
@@ -216,8 +238,115 @@ const muscles = {
         <li>Major limb elevator</li>
       </ul>`
   },
-
-  rhomboid:{
+  deltoideus:{
+    video:"../../../videos/deltoid_layer.mp4",
+    image:"../../../images/deltoid_3d.png",
+    text:`
+      <h3>Deltoideus</h3>
+      <ul>
+        <li>Origin: Spine of scapula</li>
+        <li>Insertion: Deltoid tuberosity</li>
+        <li>Function: Flexion of shoulder joint</li>
+        <li>Major limb elevator</li>
+      </ul>`
+  },
+  teresmajor:{
+    video:"../../../videos/deltoid_layer.mp4",
+    image:"../../../images/deltoid_3d.png",
+    text:`
+      <h3>Deltoideus</h3>
+      <ul>
+        <li>Origin: Spine of scapula</li>
+        <li>Insertion: Deltoid tuberosity</li>
+        <li>Function: Flexion of shoulder joint</li>
+        <li>Major limb elevator</li>
+      </ul>`
+  },
+  teresminor:{
+    video:"../../../videos/deltoid_layer.mp4",
+    image:"../../../images/deltoid_3d.png",
+    text:`
+      <h3>Deltoideus</h3>
+      <ul>
+        <li>Origin: Spine of scapula</li>
+        <li>Insertion: Deltoid tuberosity</li>
+        <li>Function: Flexion of shoulder joint</li>
+        <li>Major limb elevator</li>
+      </ul>`
+  },
+  subscapularis:{
+    video:"../../../videos/deltoid_layer.mp4",
+    image:"../../../images/deltoid_3d.png",
+    text:`
+      <h3>Deltoideus</h3>
+      <ul>
+        <li>Origin: Spine of scapula</li>
+        <li>Insertion: Deltoid tuberosity</li>
+        <li>Function: Flexion of shoulder joint</li>
+        <li>Major limb elevator</li>
+      </ul>`
+  },
+  bicepsbrachialis:{
+    video:"../../../videos/deltoid_layer.mp4",
+    image:"../../../images/deltoid_3d.png",
+    text:`
+      <h3>Deltoideus</h3>
+      <ul>
+        <li>Origin: Spine of scapula</li>
+        <li>Insertion: Deltoid tuberosity</li>
+        <li>Function: Flexion of shoulder joint</li>
+        <li>Major limb elevator</li>
+      </ul>`
+  },
+  omotransversarius:{
+    video:"../../../videos/deltoid_layer.mp4",
+    image:"../../../images/deltoid_3d.png",
+    text:`
+      <h3>Deltoideus</h3>
+      <ul>
+        <li>Origin: Spine of scapula</li>
+        <li>Insertion: Deltoid tuberosity</li>
+        <li>Function: Flexion of shoulder joint</li>
+        <li>Major limb elevator</li>
+      </ul>`
+  },
+  trapezius:{
+    video:"../../../videos/deltoid_layer.mp4",
+    image:"../../../images/deltoid_3d.png",
+    text:`
+      <h3>Deltoideus</h3>
+      <ul>
+        <li>Origin: Spine of scapula</li>
+        <li>Insertion: Deltoid tuberosity</li>
+        <li>Function: Flexion of shoulder joint</li>
+        <li>Major limb elevator</li>
+      </ul>`
+  },
+  serratus:{
+    video:"../../../videos/deltoid_layer.mp4",
+    image:"../../../images/deltoid_3d.png",
+    text:`
+      <h3>Deltoideus</h3>
+      <ul>
+        <li>Origin: Spine of scapula</li>
+        <li>Insertion: Deltoid tuberosity</li>
+        <li>Function: Flexion of shoulder joint</li>
+        <li>Major limb elevator</li>
+      </ul>`
+  },
+  pectoralis:{
+    video:"../../../videos/deltoid_layer.mp4",
+    image:"../../../images/deltoid_3d.png",
+    text:`
+      <h3>Deltoideus</h3>
+      <ul>
+        <li>Origin: Spine of scapula</li>
+        <li>Insertion: Deltoid tuberosity</li>
+        <li>Function: Flexion of shoulder joint</li>
+        <li>Major limb elevator</li>
+      </ul>`
+  },
+  rhomboideus:{
     video:"../../../videos/rhomboid_layer.mp4",
     image:"../../../images/rhomboid_3d.png",
     text:`
@@ -257,3 +386,4 @@ function loadMuscle(name,btn){
 
 </body>
 </html>
+
